@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var connection = require('../database/connection');
+var db = require('../database/connection');
 var Livro = require('../public/javascripts/livro');
 
 router.get('/', function(req, res, next) {
-  connection.query('SELECT * FROM livros', function (err, results) {
+  db.query('SELECT * FROM livros', function (err, results) {
 
     if(err) {
       console.log(err);
